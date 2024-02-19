@@ -1,4 +1,4 @@
-// comma separate dlist for multiple imports
+// comma separated list for multiple imports
 import { apiKey, abc } from "./util.js";
 
 // default value import, define a name now and still define the path
@@ -13,6 +13,7 @@ import * as util from "./util.js";
 
 // multiple imports grouped together as a JavaScript object, console logged with dot notation
 console.log("multiple imports console log: " + util.abc);
+console.log("multiple imports console log: " + util.apiKey);
 console.log("Default import: " + util.default);
 
 // as keyword to asign an alias
