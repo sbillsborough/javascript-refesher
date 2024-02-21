@@ -19,3 +19,9 @@ console.log("Default import: " + util.default);
 // as keyword to asign an alias
 import { abc as content } from "./util.js";
 console.log("abc with alias content: " + content);
+
+// VARIABLES AND VALUES SECTION
+
+let userMessage = "Hello World!";
+
+console.log(userMessage);
