@@ -23,5 +23,12 @@ console.log("abc with alias content: " + content);
 // VARIABLES AND VALUES SECTION
 
 let userMessage = "Hello World!";
+userMessage = "Hi World!";
+const constMessage = "Hello World! Constant"; // Cannot reassign a value (read only) Used for when the value will never be reassigned
 
 console.log(userMessage);
+console.log(constMessage);
+
+// OPERATORS
+
+console.log(10 === "10"); //false === is strict equals that checks for value and type whereas == only checks the value, which would return true in this case.
