@@ -32,3 +32,31 @@ console.log(constMessage);
 // OPERATORS
 
 console.log(10 === "10"); //false === is strict equals that checks for value and type whereas == only checks the value, which would return true in this case.
+
+function vowels(value) {
+  // variable to store counter amount
+  let counter = 0;
+  // variable to store characters
+  let char = "";
+  // for loop that loops over the length of the characters in the string
+  for (let i = 0; i < value.length; i++) {
+    // converts each character [i] to lower case and adds then replaces each character to the char variable
+    char = value[i].toLowerCase();
+    console.log(char);
+    // if the character in char is equal to a || e || i || o || u increment the counter value by 1
+    if (
+      char === "a" ||
+      char === "e" ||
+      char === "i" ||
+      char === "o" ||
+      char === "u"
+    ) {
+      counter++;
+      console.log(counter);
+    }
+  }
+  // ends function execution and specifies the value to be returned to the function caller
+  return counter;
+}
+
+console.log(vowels("Hello World"));
