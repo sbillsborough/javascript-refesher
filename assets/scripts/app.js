@@ -42,7 +42,7 @@ function vowels(value) {
   for (let i = 0; i < value.length; i++) {
     // converts each character [i] to lower case and adds then replaces each character to the char variable
     char = value[i].toLowerCase();
-    console.log(char);
+    // console.log(char);
     // if the character in char is equal to a || e || i || o || u increment the counter value by 1
     if (
       char === "a" ||
@@ -52,7 +52,7 @@ function vowels(value) {
       char === "u"
     ) {
       counter++;
-      console.log(counter);
+      // console.log(counter);
     }
   }
   // ends function execution and specifies the value to be returned to the function caller
@@ -60,3 +60,43 @@ function vowels(value) {
 }
 
 console.log(vowels("Hello World"));
+
+// BASEBALL GAME
+
+// You are keeping the scores for a baseball game with strange rules. At the beginning of the game, you start with an empty record.
+
+// You are given a list of strings operations, where operations[i] is the ith operation you must apply to the record and is one of the following:
+
+// An integer x.
+// Record a new score of x.
+// '+'.
+// Record a new score that is the sum of the previous two scores.
+// 'D'.
+// Record a new score that is the double of the previous score.
+// 'C'.
+// Invalidate the previous score, removing it from the record.
+
+var calPoints = function (operations) {
+  let sum = 0;
+  const stack = [];
+
+  for (const op of operations) {
+    if (op == "+") {
+      const val = stack[stack.length - 1] + stack[stack.length - 2];
+      stack.push(val);
+      sum += val;
+    } else if (op == "D") {
+      const val = stack[stack.length - 1] * 2;
+      stack.push(val);
+      sum += val;
+    } else if (op == "C") {
+      sum -= stack.pop();
+    } else {
+      stack.push(+op);
+      sum += +op;
+    }
+  }
+  return sum;
+};
+
+console.log(calPoints(["5", "2", "C", "D", "+"]));
