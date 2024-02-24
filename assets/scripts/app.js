@@ -76,6 +76,18 @@ console.log(vowels("Hello World"));
 // 'C'.
 // Invalidate the previous score, removing it from the record.
 
+// Example 1:
+
+// Input: ops = ["5","2","C","D","+"]
+// Output: 30
+// Explanation:
+// "5" - Add 5 to the record, record is now [5].
+// "2" - Add 2 to the record, record is now [5, 2].
+// "C" - Invalidate and remove the previous score, record is now [5].
+// "D" - Add 2 * 5 = 10 to the record, record is now [5, 10].
+// "+" - Add 5 + 10 = 15 to the record, record is now [5, 10, 15].
+// The total sum is 5 + 10 + 15 = 30.
+
 var calPoints = function (operations) {
   let sum = 0;
   const stack = [];
