@@ -112,3 +112,17 @@ var calPoints = function (operations) {
 };
 
 console.log(calPoints(["5", "2", "C", "D", "+"]));
+
+// FUNCTIONS
+// Not executed immediatly but at some point in the future when you call the function
+
+// function keyword
+
+function greet(arr) {
+  console.log(arr);
+}
+
+greet("Hello");
+greet("World");
+greet("!");
+greet();
