@@ -1,65 +1,65 @@
-// comma separated list for multiple imports
-import { apiKey, abc } from "./util.js";
+// // comma separated list for multiple imports
+// import { apiKey, abc } from "./util.js";
 
-// default value import, define a name now and still define the path
-import defaultApiKey from "./util.js";
+// // default value import, define a name now and still define the path
+// import defaultApiKey from "./util.js";
 
-console.log("This is the imported API key: " + apiKey);
-console.log(abc);
-console.log(`This is the default import API key: ${defaultApiKey}`);
+// console.log("This is the imported API key: " + apiKey);
+// console.log(abc);
+// console.log(`This is the default import API key: ${defaultApiKey}`);
 
-// multiple imports grouped together as a JavaScript object (any name, this example is named util)
-import * as util from "./util.js";
+// // multiple imports grouped together as a JavaScript object (any name, this example is named util)
+// import * as util from "./util.js";
 
-// multiple imports grouped together as a JavaScript object, console logged with dot notation
-console.log("multiple imports console log: " + util.abc);
-console.log("multiple imports console log: " + util.apiKey);
-console.log("Default import: " + util.default);
+// // multiple imports grouped together as a JavaScript object, console logged with dot notation
+// console.log("multiple imports console log: " + util.abc);
+// console.log("multiple imports console log: " + util.apiKey);
+// console.log("Default import: " + util.default);
 
-// as keyword to asign an alias
-import { abc as content } from "./util.js";
-console.log("abc with alias content: " + content);
+// // as keyword to asign an alias
+// import { abc as content } from "./util.js";
+// console.log("abc with alias content: " + content);
 
-// VARIABLES AND VALUES SECTION
+// // VARIABLES AND VALUES SECTION
 
-let userMessage = "Hello World!";
-userMessage = "Hi World!";
-const constMessage = "Hello World! Constant"; // Cannot reassign a value (read only) Used for when the value will never be reassigned
+// let userMessage = "Hello World!";
+// userMessage = "Hi World!";
+// const constMessage = "Hello World! Constant"; // Cannot reassign a value (read only) Used for when the value will never be reassigned
 
-console.log(userMessage);
-console.log(constMessage);
+// console.log(userMessage);
+// console.log(constMessage);
 
-// OPERATORS
+// // OPERATORS
 
-console.log(10 === "10"); //false === is strict equals that checks for value and type whereas == only checks the value, which would return true in this case.
+// console.log(10 === "10"); //false === is strict equals that checks for value and type whereas == only checks the value, which would return true in this case.
 
-function vowels(value) {
-  // variable to store counter amount
-  let counter = 0;
-  // variable to store characters
-  let char = "";
-  // for loop that loops over the length of the characters in the string
-  for (let i = 0; i < value.length; i++) {
-    // converts each character [i] to lower case and adds then replaces each character to the char variable
-    char = value[i].toLowerCase();
-    // console.log(char);
-    // if the character in char is equal to a || e || i || o || u increment the counter value by 1
-    if (
-      char === "a" ||
-      char === "e" ||
-      char === "i" ||
-      char === "o" ||
-      char === "u"
-    ) {
-      counter++;
-      // console.log(counter);
-    }
-  }
-  // ends function execution and specifies the value to be returned to the function caller
-  return counter;
-}
+// function vowels(value) {
+//   // variable to store counter amount
+//   let counter = 0;
+//   // variable to store characters
+//   let char = "";
+//   // for loop that loops over the length of the characters in the string
+//   for (let i = 0; i < value.length; i++) {
+//     // converts each character [i] to lower case and adds then replaces each character to the char variable
+//     char = value[i].toLowerCase();
+//     // console.log(char);
+//     // if the character in char is equal to a || e || i || o || u increment the counter value by 1
+//     if (
+//       char === "a" ||
+//       char === "e" ||
+//       char === "i" ||
+//       char === "o" ||
+//       char === "u"
+//     ) {
+//       counter++;
+//       // console.log(counter);
+//     }
+//   }
+//   // ends function execution and specifies the value to be returned to the function caller
+//   return counter;
+// }
 
-console.log(vowels("Hello World"));
+// console.log(vowels("Hello World"));
 
 // BASEBALL GAME
 
@@ -88,41 +88,39 @@ console.log(vowels("Hello World"));
 // "+" - Add 5 + 10 = 15 to the record, record is now [5, 10, 15].
 // The total sum is 5 + 10 + 15 = 30.
 
-var calPoints = function (operations) {
-  let sum = 0;
-  const stack = [];
+// var calPoints = function (operations) {
+//   let sum = 0;
+//   const stack = [];
 
-  for (const op of operations) {
-    if (op == "+") {
-      const val = stack[stack.length - 1] + stack[stack.length - 2];
-      stack.push(val);
-      sum += val;
-    } else if (op == "D") {
-      const val = stack[stack.length - 1] * 2;
-      stack.push(val);
-      sum += val;
-    } else if (op == "C") {
-      sum -= stack.pop();
-    } else {
-      stack.push(+op);
-      sum += +op;
-    }
-  }
-  return sum;
-};
+//   for (const op of operations) {
+//     if (op == "+") {
+//       const val = stack[stack.length - 1] + stack[stack.length - 2];
+//       stack.push(val);
+//       sum += val;
+//     } else if (op == "D") {
+//       const val = stack[stack.length - 1] * 2;
+//       stack.push(val);
+//       sum += val;
+//     } else if (op == "C") {
+//       sum -= stack.pop();
+//     } else {
+//       stack.push(+op);
+//       sum += +op;
+//     }
+//   }
+//   return sum;
+// };
 
-console.log(calPoints(["5", "2", "C", "D", "+"]));
+// console.log(calPoints(["5", "2", "C", "D", "+"]));
 
 // FUNCTIONS
 // Not executed immediatly but at some point in the future when you call the function
 
 // function keyword
 
-function greet(arr) {
-  console.log(arr);
+function greetName(userName, message) {
+  console.log("Hello " + userName + " " + message + "!");
+  console.log(`Hello ${userName}, ${message} again!`);
 }
 
-greet("Hello");
-greet("World");
-greet("!");
-greet();
+greetName("Scott", "it's nice to meet you");
