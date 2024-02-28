@@ -124,3 +124,4 @@ function greetName(userName, message) {
 }
 
 greetName("Scott", "it's nice to meet you");
+greetName("Gemma", "What's up");
