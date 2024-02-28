@@ -118,10 +118,9 @@
 
 // function keyword
 
-function greetName(userName = "Random user", message = "Hello there") {
-  console.log("Hello " + userName + " " + message + "!");
-  console.log(`Hello ${userName}, ${message} again!`);
+function createGreeting(userName = "Random user", message = "Hello there") {
+  return "What's up " + userName + ", " + message;
 }
 
-greetName("Scott", "it's nice to meet you");
-greetName();
+const bazGreeting = createGreeting("Baz", "how's it going?");
+console.log(bazGreeting);
