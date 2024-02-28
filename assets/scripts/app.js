@@ -118,10 +118,10 @@
 
 // function keyword
 
-function greetName(userName, message) {
+function greetName(userName = "Random user", message = "Hello there") {
   console.log("Hello " + userName + " " + message + "!");
   console.log(`Hello ${userName}, ${message} again!`);
 }
 
 greetName("Scott", "it's nice to meet you");
-greetName("Gemma", "What's up");
+greetName();
