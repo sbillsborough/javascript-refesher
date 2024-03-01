@@ -125,93 +125,100 @@ function createGreeting(userName = "Random user", message = "Hello there") {
 const bazGreeting = createGreeting("Baz", "how's it going?");
 console.log(bazGreeting);
 
+function combine(a, b, c) {
+  return (a * b) / c;
+}
+
+const combinedMultiplicationDivision = combine(3, 2, 2);
+console.log(combinedMultiplicationDivision);
+
 // DESIGN LINKED LIST - Leetcode 707
 
-class Node {
-  constructor(val = null, prev = null, next = null) {
-    this.val = val;
-    this.prev = prev;
-    this.next = next;
-  }
-}
+// class Node {
+//   constructor(val = null, prev = null, next = null) {
+//     this.val = val;
+//     this.prev = prev;
+//     this.next = next;
+//   }
+// }
 
-class MyLinkedList {
-  constructor() {
-    this.head = new Node();
-    this.tail = new Node();
-    this.length = 0;
-    this.head.next = this.tail;
-    this.tail.prev = this.head;
-  }
+// class MyLinkedList {
+//   constructor() {
+//     this.head = new Node();
+//     this.tail = new Node();
+//     this.length = 0;
+//     this.head.next = this.tail;
+//     this.tail.prev = this.head;
+//   }
 
-  get(idx) {
-    if (idx < 0 || idx >= this.length) return -1;
+//   get(idx) {
+//     if (idx < 0 || idx >= this.length) return -1;
 
-    let curNode = this.head.next;
+//     let curNode = this.head.next;
 
-    while (idx--) curNode = curNode.next;
+//     while (idx--) curNode = curNode.next;
 
-    return curNode.val;
-  }
+//     return curNode.val;
+//   }
 
-  addAtHead(val) {
-    let prev = this.head;
-    let next = this.head.next;
+//   addAtHead(val) {
+//     let prev = this.head;
+//     let next = this.head.next;
 
-    let node = new Node(val, prev, next);
+//     let node = new Node(val, prev, next);
 
-    prev.next = node;
-    next.prev = node;
+//     prev.next = node;
+//     next.prev = node;
 
-    this.length++;
-  }
+//     this.length++;
+//   }
 
-  addAtTail(val) {
-    let prev = this.head;
-    let next = this.tail;
+//   addAtTail(val) {
+//     let prev = this.head;
+//     let next = this.tail;
 
-    let node = new Node(val, prev, next);
+//     let node = new Node(val, prev, next);
 
-    prev.next = node;
-    next.prev = node;
+//     prev.next = node;
+//     next.prev = node;
 
-    this.length++;
-  }
+//     this.length++;
+//   }
 
-  addAtIndex(idx, val) {
-    if (idx < 0 || idx > this.length) return null;
+//   addAtIndex(idx, val) {
+//     if (idx < 0 || idx > this.length) return null;
 
-    if (idx === this.length) {
-      this.addAtTail(val);
-      return;
-    }
+//     if (idx === this.length) {
+//       this.addAtTail(val);
+//       return;
+//     }
 
-    let prev = this.head;
+//     let prev = this.head;
 
-    while (idx--) prev = prev.next;
+//     while (idx--) prev = prev.next;
 
-    let next = prev.next;
+//     let next = prev.next;
 
-    let node = new Node(val, prev, next);
+//     let node = new Node(val, prev, next);
 
-    prev.next = node;
-    next.prev = node;
+//     prev.next = node;
+//     next.prev = node;
 
-    this.length++;
-  }
+//     this.length++;
+//   }
 
-  deleteAtIndex(idx) {
-    if (idx < 0 || idx >= this.length) return null;
+//   deleteAtIndex(idx) {
+//     if (idx < 0 || idx >= this.length) return null;
 
-    let prev = this.head;
+//     let prev = this.head;
 
-    while (idx--) prev = prev.next;
+//     while (idx--) prev = prev.next;
 
-    let next = prev.next.next;
+//     let next = prev.next.next;
 
-    prev.next = next;
-    next.prev = prev;
+//     prev.next = next;
+//     next.prev = prev;
 
-    this.length--;
-  }
-}
+//     this.length--;
+//   }
+// }
